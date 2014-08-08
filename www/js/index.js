@@ -17,6 +17,8 @@
  * under the License.
  */
 
+/* global window, document */
+
 var pushNotification = window.plugins.pushNotification;
 
 var app = {
