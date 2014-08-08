@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var pushNotification = window.plugins.pushNotification;
+
 var app = {
     // Application Constructor
     initialize: function() {
