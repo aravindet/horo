@@ -19,7 +19,7 @@
 
 /* global window, document */
 
-var pushNotification = window.plugins && window.plugins.pushNotification;
+var pushNotification;
 
 var app = {
     // Application Constructor
@@ -39,6 +39,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		
+		pushNotification = window.plugins && window.plugins.pushNotification;
+		if(!pushNotification) { console.log("pushNotification isn't ready."); return; }
 		
 		if ( device.platform == 'android' || device.platform == 'Android' )
 		{
