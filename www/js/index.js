@@ -37,11 +37,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		$("#app-status-ul").append('<li>Device Ready</li>');
 		
 		if ( device.platform == 'android' || device.platform == 'Android' )
 		{
-			alert('device ready; android ' + pushNotification);
+			console.log('device ready; android ' + pushNotification);
 			pushNotification.register(
 				successHandler,
 				errorHandler, {
@@ -51,7 +50,7 @@ var app = {
 		}
 		else
 		{
-			alert('device ready; not android');
+			console.log('device ready; not android');
 			pushNotification.register(
 				tokenHandler,
 				errorHandler, {
@@ -64,18 +63,18 @@ var app = {
 		
 				// result contains any message sent from the plugin call
 		function successHandler (result) {
-			alert('registration success result = ' + result);
+			console.log('registration success result = ' + result);
 		}
 
 				// result contains any error description text returned from the plugin call
 		function errorHandler (error) {
-			alert('registration error = ' + error);
+			console.log('registration error = ' + error);
 		}
 
 		function tokenHandler (result) {
 			// Your iOS push server needs to know the token before it can push to this device
 			// here is where you might want to send it the token for later use.
-			alert('registration success device token = ' + result);
+			console.log('registration success device token = ' + result);
 		}
 		
 //		// iOS
